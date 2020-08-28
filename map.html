@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎲 랜덤런치</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- jQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript"
+    src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=trww0kcpj0"></script>
+    
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div>
+                <div class="bi">🎲 랜덤런치 <span>인기 점심 메뉴 랜덤 추천, 식당 추천은 덤</span></div>
+            </div>
+            <div class="now_location_weather">
+                📍장위동
+            </div>
+        </header>
+        <div class="map_content">
+            <div id="map" style="width:100%;height:400px;"></div>
+
+            <script>
+                var mapOptions = {
+                    center: new naver.maps.LatLng(37.3595704, 127.105399),
+                    zoom: 12
+                };
+
+                var map = new naver.maps.Map('map', mapOptions);
+            </script>
+            <h2>
+                <span>햄버거</span> 식당 모아 봤어요.
+            </h2>
+            <div class="map_list">
+                <div class="map_item">
+                    <h3>김치찌개천국</h3>
+                    <div>서울특별시 강남구 도산대로 49 어쩌고 빌딩 1층</div>
+                    <div>02-999-9999</div>
+                </div>
+                <div class="map_item">
+                    <h3>김치찌개천국</h3>
+                    <div>서울특별시 강남구 도산대로 49 어쩌고 빌딩 1층</div>
+                    <div>02-999-9999</div>
+                </div>
+                <div class="map_item">
+                    <h3>김치찌개천국</h3>
+                    <div>서울특별시 강남구 도산대로 49 어쩌고 빌딩 1층</div>
+                    <div>02-999-9999</div>
+                </div>
+                <div class="map_item">
+                    <h3>김치찌개천국</h3>
+                    <div>서울특별시 강남구 도산대로 49 어쩌고 빌딩 1층</div>
+                    <div>02-999-9999</div>
+                </div>
+                <div class="map_item">
+                    <h3>김치찌개천국</h3>
+                    <div>서울특별시 강남구 도산대로 49 어쩌고 빌딩 1층</div>
+                    <div>02-999-9999</div>
+                </div>
+            
+            
+            </div>
+            <button class="btn_refresh">추천 다시 받기 ☝️</button>
+
+        </div>
+    </div>
+
+</body>
+
+</html>
