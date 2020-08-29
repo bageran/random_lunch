@@ -1,4 +1,3 @@
-// const foodContent = document.querySelector(".food_content");
 const content = document.querySelector(".wrap");
 
 let img_url = "http://bageran.cafe24.com/random_lunch/images/";
@@ -25,33 +24,37 @@ const foods = [
     {name: "짬뽕", image: img_url + "f020.png"},
     {name: "초밥", image: img_url + "f021.png"},
     {name: "콩나물국밥", image: img_url + "f022.png"},
-    {name: "크림파스타", image: img_url + "f023.png"},
+    {name: "파스타", image: img_url + "f023.png"},
     {name: "스파게티", image: img_url + "f024.png"},
     {name: "햄버거", image: img_url + "f025.png"},
     {name: "돈까스", image: img_url + "f026.png"},
 ];
 
-const food = Math.floor(Math.random() * foods.length);
-const name = foods[food].name;
-const img = foods[food].image;
-const tempHtml = `
-            <div class="content">
+// 선택한 음식 이름이 담기는 전역 변수!
+let name
 
-                <div class="food_content">
-                    <h1>
-                        오늘 점심,<br />
-                        <span>${name}</span> 어때요?
-                    </h1>
-                </div>
-
-                <div class="fog"></div>
-                <div>
-                    <img class="food_img" src="${img}">
-                </div>
-
-            </div>
-            `;
-$('.wrap').append(tempHtml);
+// 맨 밑에 food_refresh()를  실행하는거로 대체할 수 있을 것 같아요!
+// const food = Math.floor(Math.random() * foods.length);
+// const name = foods[food].name;
+// const img = foods[food].image;
+// const tempHtml = `
+//             <div class="content">
+//
+//                 <div class="food_content">
+//                     <h1>
+//                         오늘 점심,<br />
+//                         <span>${name}</span> 어때요?
+//                     </h1>
+//                 </div>
+//
+//                 <div class="fog"></div>
+//                 <div>
+//                     <img class="food_img" src="${img}">
+//                 </div>
+//
+//             </div>
+//             `;
+// $('.wrap').append(tempHtml);
 
 function food_select() {
     const new_window = window.open('https://map.naver.com/v5/search/장위동%20' + name, '_blank');
@@ -59,8 +62,12 @@ function food_select() {
 }
 
 function food_refresh() {
+    // 글씨 겹치지 않게 비워주기!
+    $('.content').empty();
+
+    // 함수 밖에 만들어 놓은
     const food = Math.floor(Math.random() * foods.length);
-    const name = foods[food].name;
+    name = foods[food].name;
     const img = foods[food].image;
     const tempHtml = `
                 <div class="content">
@@ -68,7 +75,7 @@ function food_refresh() {
                     <div class="food_content">
                         <h1>
                             오늘 점심,<br />
-                            그럼 <span> ${name}</span> 어때요?
+                            <span> ${name}</span> 어때요?
                         </h1>
                     </div>
                     <div class="fog"></div>
@@ -80,3 +87,6 @@ function food_refresh() {
                 `;
     $('.wrap').append(tempHtml);
 }
+
+// 처음 시작을 이렇게!
+food_refresh()
