@@ -10,29 +10,34 @@
         <!-- jQuery를 import 합니다 -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <link rel="stylesheet" href="style.css">
+        <style>
+            .bye_wrap {
+                background-color: black;
+            }
+        </style>
         
     </head>
 
 <body>
-    <div class="wrap">
+    <div class="bye_wrap">
         <header>
             <div>
-                <div class="bi">🎲 랜덤런치 <span>인기 점심 메뉴 랜덤 추천, 식당 추천은 덤</span></div>
-            </div>
-            <div class="now_location_weather">
-                📍장위동
+                <div class="bi">🎲 랜덤런치 <span>점심 메뉴 랜덤 추천</span></div>
             </div>
         </header>
         <div class="content_bye">
-            <!-- <h1>
-                오늘은<br />
-                <span>굶는게~</span> 어때요?
-            </h1> -->
-            <div class="buttons">
-                <button class="bad">오늘은 굶고 내일 만나요~👋</button>
+            <div class="pig">
+                <img src="images/doridori.gif">
             </div>
+            <button onclick="windowClose();">다 싫다면...안녕...내일 봐요...👋</button>
         </div>
     </div>
+    <script>
+        function windowClose() {
+            window.open("about:blank", "_self").close();
+        }
+    </script>
+    <script type="text/Javascript" src="foods.js" charset="UTF-8"></script>
 
 </body>
 

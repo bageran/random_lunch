@@ -5,6 +5,17 @@
     font-style: normal;
 }
 
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
@@ -154,12 +165,14 @@ header .now_location_weather {
 /* map start */
 
 .map_content {
-    display: flex;
+    width: 100%;
+    /* display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center; */
 }
 
 .map_content > h2 {
+    margin: 100px auto 20px auto;
     font-weight: 200;
     text-align: center;
     font-size: 28px;
@@ -191,20 +204,16 @@ header .now_location_weather {
 }
 
 .btn_refresh {
-    display: flex;
-    justify-self: center;
-    align-self: center;
-    margin-top: 10px;
-    margin-bottom: 40px;
-    cursor: pointer;
-    color: #FFFFFF;
-    background: #E45606;
+    color: #333333;
+    background: white;
     /* font-weight: bold; */
     font-size: 24px;
     padding: 10px 30px;
+    margin: 20px auto 80px auto;
     box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.25);
     border: 0;
     border-radius: 100px;
+    cursor: pointer;
 }
 
 
@@ -214,28 +223,34 @@ header .now_location_weather {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-image:
-                url("images/pigface.png");
-    background-size: auto;
-    background-repeat: no-repeat;
-    background-position: center;
     /* height: calc(100vh - 66px); */
     height: 100vh;
     width: 100vw;
     /* margin: auto; */
 }
 
-.content_bye h1 {
+.content_bye .pig {
     color: white;
     font-weight: 200;
-    font-size: 80px;
+    font-size: 100px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    white-space: nowrap; 
+    width: 100vw; 
+    overflow: hidden;
+    text-overflow: clip; 
 }
 
-.content_bye h1>span {
-    font-weight: bold;
+.content_bye button {
+    color: #333333;
+    background: white;
+    /* font-weight: bold; */
+    font-size: 24px;
+    padding: 10px 30px;
+    box-shadow: 0px 9px 10px rgba(0, 0, 0, 0.25);
+    border: 0;
+    border-radius: 100px;
+    cursor: pointer;
 }

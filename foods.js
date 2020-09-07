@@ -1,4 +1,24 @@
-const content = document.querySelector(".wrap");
+// document.querySelector(".wrap");
+
+// const getLocation = document.getElementByID("#now_location").value;
+
+// const getLocation = $('#now_location').val();
+
+let locationUrl = location.search.split('=');
+let locationValue = locationUrl[1];
+let locationName = decodeURI(locationValue);
+
+
+function setNowLocation() {
+    const navTempHtml = `
+                <a href="index.html">
+                    <div class="now_location_weather">
+                        📍${locationName}
+                    </div>
+                </a>
+                    `;
+    $('.now_location_weather').append(navTempHtml);
+}
 
 let img_url = "http://bageran.cafe24.com/random_lunch/images/";
 const foods = [
@@ -7,7 +27,7 @@ const foods = [
     {name: "김치볶음밥", image: img_url + "f003.png"},
     {name: "김치찌개", image: img_url + "f004.png"},
     {name: "냉면", image: img_url + "f005.png"},
-    {name: "된장찌개", image: img_url + "f006.png"},
+    {name: "카레", image: img_url + "f006.png"},
     {name: "떡볶이", image: img_url + "f007.png"},
     {name: "라면", image: img_url + "f008.png"},
     {name: "부대찌개", image: img_url + "f009.png"},
@@ -57,7 +77,7 @@ let name
 // $('.wrap').append(tempHtml);
 
 function food_select() {
-    const new_window = window.open('https://map.naver.com/v5/search/장위동%20' + name, '_blank');
+    const new_window = window.open('https://map.naver.com/v5/search/' + locationName + name, '_blank');
     return new_window;
 }
 
@@ -82,11 +102,22 @@ function food_refresh() {
                     <div>
                         <img class="food_img" src="${img}">
                     </div>
-
                 </div>
                 `;
     $('.wrap').append(tempHtml);
+    onClick();
 }
 
+let clicks = 0;
+function onClick() {
+    clicks += 1;
+    if (clicks > 7) {
+        location.href = "bye.html";
+    }
+}
+
+
 // 처음 시작을 이렇게!
-food_refresh()
+
+food_refresh();
+setNowLocation();

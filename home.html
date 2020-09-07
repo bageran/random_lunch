@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎲 랜덤런치</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!-- jQuery를 import 합니다 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div>
+                <div class="bi">🎲 랜덤런치 <span>점심 메뉴 랜덤 추천</span></div>
+            </div>
+                <div class="now_location_weather">
+
+            </div>
+        </header>
+        <div class="buttons">
+            <button onclick="food_select();" class="good">좋아요 👍</button>
+            <button onclick="food_refresh();" class="bad">싫어요 👎</button>
+        </div>
+        <div class="content">
+
+            <div class="food_content">
+            </div>
+        </div>
+    </div>
+    <script type="text/Javascript" src="foods.js" charset="UTF-8"></script>
+</body>
+
+</html>
